@@ -1,0 +1,14 @@
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{{ T_TITLE }}" />
+<meta name="twitter:description" content="{{ T_DESCRIPTION|trim }}" />
+<meta name="twitter:url" content="{{ T_CANONICAL_URL }}" />
+<meta name="twitter:image" content="{{ SITE_LOGO }}" />
+<meta name="twitter:site" content="{{ TWITTER }}" />
+<meta name="twitter:creator" content="{{ TWITTER }}" />
+
+{% if article %}
+  <meta name="twitter:label1" content="Written by" />
+  <meta name="twitter:data1" content="{{ AUTHOR }}" />
+  <meta name="twitter:label2" content="Filed under" />
+  <meta name="twitter:data2" content="{{ article.category.name }}, {% for tag in article.tags %}{{ tag.name }}{% if not loop.last %}, {% endif %}{% endfor %}" />
+{% endif %}

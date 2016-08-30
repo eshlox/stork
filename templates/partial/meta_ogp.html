@@ -1,0 +1,19 @@
+<meta property="og:site_name" content="{{ SITENAME }}" />
+<meta property="og:title" content="{{ T_TITLE }}" />
+<meta property="og:type" content="{% if article %}article{% else %}website{% endif %}" />
+<meta property="og:description" content="{{ T_DESCRIPTION|trim }}" />
+<meta property="og:url" content="{{ T_CANONICAL_URL }}" />
+
+{% if article %}
+  <meta property="article:published_time" content="{{ article.date }}" />
+  <meta property="article:modified_time" content="{{ article.modified }}" />
+
+  {% for tag in article.tags %}
+    <meta property="article:tag" content="{{ tag.name }}" />
+  {% endfor %}
+
+  <meta property="article:section" content="{{ article.category.name }}" />
+
+  <meta property="article:publisher" content="{{ SITEURL }}{{ ABOUT_URL }}" />
+  <meta property="article:author" content="{{ SITEURL }}{{ ABOUT_URL }}" />
+{% endif %}

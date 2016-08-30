@@ -1,0 +1,10 @@
+div.highlight, code {
+  background-color: $code-background;
+  font-size: 1rem;
+  margin: 3rem 0;
+
+  pre {
+    overflow: auto;
+    padding: 1rem 0.5rem;
+  }
+}

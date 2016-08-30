@@ -1,0 +1,5 @@
+{% set T_TITLE %}Posts for category {{ category }}, page {{ articles_page.number }}{% endset %}
+{% set T_DESCRIPTION %}Posts for category {{ category }}, page {{ articles_page.number }}{% endset %}
+{% set T_CANONICAL_URL %}{{ SITEURL }}/category/{{ category }}{% endset %}
+
+{% extends "index.html" %}

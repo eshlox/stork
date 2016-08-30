@@ -1,0 +1,41 @@
+{% if not article %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Website",
+      "name": "{{ SITENAME }}",
+      "publisher": "{{ AUTHOR }}",
+      "url": "{{ T_CANONICAL_URL }}",
+      "image": "{{ SITELOGO }}",
+      "description": "{{ T_DESCRIPTION|trim }}"
+    }
+  </script>
+{% else %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "author": {
+          "@type": "Person",
+          "name": "{{ AUTHOR }}",
+          "image": "//www.gravatar.com/avatar/{{ GRAVATAR }}?d=404&s=250",
+          "url": "{{ SITEURL}}{{ ABOUT_URL }}",
+          "sameAs": [
+              "{{ SITEURL }}",
+              "{{ FACEBOOK_URL }}",
+              "{{ TWITTER_URL }}"
+          ]
+      },
+      "name": "{{ T_TITLE }}",
+      "headline": "{{ T_TITLE }}",
+      "url": "{{ SITEURL }}{{ article.url }}",
+      "datePublished": "{{ article.date }}",
+      "dateModified": "{{ article.modified }}",
+      "keywords": "{{ article.category.name }}, {% for tag in article.tags %}{{ tag.name }}{% if not loop.last %}, {% endif %}{% endfor %}",
+      "description": "{{ T_DESCRIPTION|trim }}"
+      {% if  article.metadata.get('cover') %}
+        "image": "{{ article.metadata.get('cover') }}"
+      {% endif %}
+    }
+  </script>
+{% endif %}

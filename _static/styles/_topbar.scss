@@ -1,0 +1,21 @@
+.topbar {
+  background-color: $topbar-background;
+  height: $topbar-height;
+  padding: 1rem;
+  text-align: right;
+
+  .icon-menu {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .icon-rss2 {
+    color: $black;
+    float: left;
+    font-size: 1.5rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

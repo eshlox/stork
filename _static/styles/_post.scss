@@ -1,0 +1,90 @@
+main.post {
+  section.author {
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+    text-align: center;
+
+    a {
+      color: $black;
+
+      &:visited, &:active, &:hover {
+        color: $black;
+      }
+    }
+
+    .avatar {
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+    }
+  }
+
+  section.date-and-category {
+    font-size: 1.1rem;
+    text-align: center;
+    word-wrap: break-word;
+
+    time {
+      font-style: italic;
+      font-size: 1rem;
+    }
+  }
+
+  section.tags {
+    text-align: center;
+    font-style: italic;
+    padding: 1rem 0;
+    word-wrap: break-word;
+  }
+
+  article {
+    margin: 2rem 0;
+
+    header {
+      margin-bottom: 3rem;
+
+      h1 {
+        font-size: 2rem;
+        margin: 1rem 0 1rem 0;
+        text-align: center;
+        word-wrap: break-word;
+
+        a {
+          color: $black;
+
+          &:visited, &:active, &:hover {
+            color: $black;
+          }
+        }
+      }
+
+      section {
+        font-size: 1rem;
+        text-align: right;
+      }
+    }
+
+    section {
+      &.post-content {
+        font-size: 1.3rem;
+        word-wrap: break-word;
+
+        img {
+          display: block;
+          height: auto;
+          left: 50%;
+          max-width: 125%;
+          padding: 2rem 0;
+          position: relative;
+          transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          -webkit-transform: translateX(-50%);
+        }
+      }
+    }
+
+    div#disqus_thread {
+      margin-top: 6rem;
+    }
+  }
+}

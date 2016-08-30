@@ -1,0 +1,1 @@
+function openMenu(){var e=document.getElementById("overlay");e.className="visible";var e=document.getElementById("navigation");e.className="visible"}function closeMenu(){var e=document.getElementById("overlay");e.className="";var e=document.getElementById("navigation");e.className=""}

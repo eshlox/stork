@@ -1,0 +1,20 @@
+{% set T_TITLE %}List of posts, page {{ articles_page.number }}{% endset %}
+{% set T_CANONICAL_URL = SITEURL %}
+{% set T_DESCRIPTION = SITEDESCRIPTION %}
+
+{% extends "base.html" %}
+
+{% block content %}
+  <main class="post">
+    {% include "partial/section_author.html" %}
+
+    {% for article in articles_page.object_list %}
+      <article>
+        {% include "partial/header_article.html" %}
+      </article>
+    {% endfor %}
+
+    {% include "partial/pagination.html" %}
+
+  </main>
+{% endblock %}

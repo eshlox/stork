@@ -1,0 +1,11 @@
+{% set T_TITLE = page.title %}
+{% set T_DESCRIPTION = page.description %}
+{% set T_CANONICAL_URL %}{{ SITEURL }}{{ page.url }}{% endset %}
+
+{% extends "base.html" %}
+
+{% block content %}
+  <main class="{{ page.title|lower }}">
+    {{ page.content }}
+  </main>
+{% endblock %}

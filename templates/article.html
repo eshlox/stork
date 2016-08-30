@@ -1,0 +1,28 @@
+{% set T_TITLE = article.title|striptags %}
+{% set T_DESCRIPTION %}
+  {% if article.description %}
+    {{ article.description|striptags }}
+  {% else %}
+    {{ article.content|striptags|truncate(160, false, '...') }}
+  {% endif %}
+{% endset %}
+{% set T_CANONICAL_URL %}{{ SITEURL }}{{ article.url }}{% endset %}
+
+{% extends "base.html" %}
+
+{% block content %}
+  <main class="post">
+    <article>
+      {% include "partial/section_author.html" %}
+      {% include "partial/header_article.html" %}
+
+      <section class="post-content">
+        {{ article.content }}
+      </section>
+
+      {% include "partial/disqus.html" %}
+    </article>
+  </main>
+
+  {% include "partial/footer.html" %}
+{% endblock %}

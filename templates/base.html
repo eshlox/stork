@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="{% if article %}{{ article.lang }}{% else %}{{ DEFAULT_LANG }}{% endif %}">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="robots" content="robots.txt" />
+
+    <title>{{ SITENAME }}{% if T_TITLE %} - {{ T_TITLE }}{% endif %}</title>
+    <meta name="description" content="{{ T_DESCRIPTION|trim }}" />
+
+    {% if FAVICON %}
+      <link rel="shortcut icon" href="{{ FAVICON }}" type="image/x-icon">
+      <link rel="icon" href="{{ FAVICON }}" type="image/x-icon">
+    {% endif %}
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygment.css">
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/styles.css">
+
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}/index.xml" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS">
+
+    <link rel="canonical" href="{{ T_CANONICAL_URL }}" />
+
+    <meta name="referrer" content="origin" />
+    <meta name="author" content="{{ AUTHOR }}" />
+
+    {% include ["partial/meta_json_ld.html", "partial/meta_ogp.html", "partial/meta_twitter.html"] with context %}
+  </head>
+  <body>
+    <div id="overlay" onclick="closeMenu()"></div>
+
+    <div id="navigation">
+      <span class="icon-cross" onclick="closeMenu()" title="Close menu"></span>
+
+      <ul>
+        <li><a href="{{ SITEURL }}/" title="Home">Home</a></li>
+        <li><a href="{{ SITEURL }}{{ ABOUT_URL }}" title="About">About</a></li>
+        <li><a href="{{ SITEURL }}/categories/" title="Categories">Categories</a></li>
+        <li><a href="{{ SITEURL }}/tags/" title="Tags">Tags</a></li>
+        <li><a href="{{ SITEURL }}{{ CONTACT_URL }}" title="Contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <header class="topbar">
+        <a href="{{ SITEURL }}/rss/index.xml" class="icon-rss2" title="RSS"></a>
+        <span class="icon-menu" onclick="openMenu()" title="Open menu"></span>
+      </header>
+
+      {% block content %}{% endblock %}
+    </div>
+
+    <script src="{{ SITEURL }}/theme/js/scripts.js"></script>
+    {% include "partial/google_analytics.html" %}
+  </body>
+</html>

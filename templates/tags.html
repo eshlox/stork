@@ -1,0 +1,20 @@
+{% set T_TITLE = "List of tags" %}
+{% set T_DESCRIPTION %}List of tags{% endset %}
+{% set T_CANONICAL_URL %}{{ SITEURL }}/tags/{% endset %}
+
+{% extends "base.html" %}
+
+{% block content %}
+  <main class="rss-list">
+    <h2>Tags</h2>
+    <ul>
+      {%- for tag, articles in tags|sort %}
+        <li>
+          <a class="icon-rss2 normal-link" href="{{ SITEURL }}{{ tag.url }}rss/index.xml"></a>
+          <a href="{{ SITEURL }}{{ tag.url }}">#{{ tag }}</a>
+          <span class="count">({{ articles|count }})</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </main>
+{% endblock %}
