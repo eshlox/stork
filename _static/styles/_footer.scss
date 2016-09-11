@@ -1,4 +1,7 @@
+@import "settings";
+
 footer {
-  margin: 4rem 0 2rem 0;
+  background-color: $gray;
+  padding: 1rem;
   text-align: center;
 }

@@ -11,18 +11,47 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <main class="post">
+  <main class="content">
     <article>
-      {% include "partial/section_author.html" %}
-      {% include "partial/header_article.html" %}
+      <header>
+        <section>
+          <time class="post-date" datetime="{{ article.date }}">{{ article.locale_date }}</time>
+        </section>
+        <h1>
+          <a href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a>
+        </h1>
+      </header>
+
+      {% if article.featured_imagee %}
+        <section class="featured-image">
+          <img src="{{ article.featured_image }}">
+        </section>
+      {% endif %}
 
       <section class="post-content">
         {{ article.content }}
       </section>
 
+      <section class="post-meta">
+        <section class="category">
+          <span class="icon-folder"></span> <a href="{{ SITEURL }}{{ article.category.url }}">{{ article.category }}</a>
+        </section>
+
+        <section class="tags">
+          <span class="icon-price-tags"></span>
+          {% for tag in article.tags %}
+            <a href="{{ SITEURL }}{{ tag.url }}">#{{ tag }}</a>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </section>
+
+        <section class="share">
+          <a href="#" class="icon-google-plus2"></a>
+          <a href="#" class="icon-twitter"></a>
+          <a href="#" class="icon-facebook2"></a>
+        </section>
+      </section>
+
       {% include "partial/disqus.html" %}
     </article>
   </main>
-
-  {% include "partial/footer.html" %}
 {% endblock %}

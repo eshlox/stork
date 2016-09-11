@@ -5,16 +5,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <main class="post">
-    {% include "partial/section_author.html" %}
-
+  <main class="content posts-list">
     {% for article in articles_page.object_list %}
-      <article>
-        {% include "partial/header_article.html" %}
-      </article>
+      <div class="card">
+        {% if article.featured_image %}
+          <div class="image">
+            <a href="{{ article.url }}" title="{{ article.title }}">
+              <img src="{{ article.featured_image }}" alt="{{ article.title }}">
+            </a>
+          </div>
+        {% endif %}
+        <h1><a href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a></h1>
+        <div class="content">
+          {{ article.content|striptags|truncate(300, false, '...') }}
+        </div>
+        <div class="bottom">
+          <a href="{{ article.url }}" title="Read more...">Read more...</a>
+          <span class="comments">127 comments</span>
+        </div>
+      </div>
     {% endfor %}
 
-    {% include "partial/pagination.html" %}
-
+    {%  include "partial/pagination.html" %}
   </main>
 {% endblock %}

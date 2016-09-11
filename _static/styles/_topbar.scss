@@ -1,21 +1,14 @@
-.topbar {
-  background-color: $topbar-background;
-  height: $topbar-height;
-  padding: 1rem;
-  text-align: right;
+@import "settings";
 
-  .icon-menu {
-    font-size: 2rem;
-    cursor: pointer;
-  }
+header.topbar {
+  background-color: $white;
+  box-shadow: 0 0 0.1rem rgba(0, 0, 0, .15);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 
-  .icon-rss2 {
+  .author {
     color: $black;
-    float: left;
-    font-size: 1.5rem;
-
-    &:hover {
-      text-decoration: none;
-    }
+    margin: 1rem;
   }
 }

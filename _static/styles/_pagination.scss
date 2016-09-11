@@ -1,9 +1,23 @@
+@import "settings";
+
 section.pagination {
-  margin: 6rem 0 2rem 0;
-  text-align: center;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
 
   a {
-    font-size: 1.5rem;
-    margin: 0 1rem;
+    display: block;
+    padding: 1rem 1.5rem;
+    background: $blue;
+    color: $white;
+    border-radius: 0.2rem;
+
+    &:visited, &:active, &:hover {
+      color: $white;
+    }
+
+    &:nth-child(2) {
+      margin-left: auto;
+    }
   }
 }

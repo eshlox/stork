@@ -3,6 +3,7 @@
 <meta property="og:type" content="{% if article %}article{% else %}website{% endif %}" />
 <meta property="og:description" content="{{ T_DESCRIPTION|trim }}" />
 <meta property="og:url" content="{{ T_CANONICAL_URL }}" />
+<meta property="og:image" content="{{ SITELOGO }}" />
 
 {% if article %}
   <meta property="article:published_time" content="{{ article.date }}" />

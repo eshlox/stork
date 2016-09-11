@@ -30,6 +30,9 @@ gulp.task('sass', function () {
 gulp.task('scripts', function() {
   return gulp.src([
     // 'node_modules/offside-js/dist/offside.js',
+    'node_modules/slideout/dist/slideout.js',
+    // 'node_modules/minigrid/src/index.js',
+    'node_modules/headroom.js/dist/headroom.js',
     '_static/scripts/scripts.js'
   ])
     .pipe(concat('scripts.js'))

@@ -1,90 +1,98 @@
-main.post {
-  section.author {
-    font-size: 1.5rem;
-    margin-bottom: 5rem;
-    text-align: center;
+article {
+  //margin: 0 1rem;
+  position: relative;
+  width: 80%;
+  max-width: 710px;
+  margin: 0 auto;
+  word-wrap: break-word;
 
-    a {
-      color: $black;
+  header {
+    h1 {
+      margin: 1rem auto;
+      text-align: center;
 
-      &:visited, &:active, &:hover {
+      a {
         color: $black;
-      }
-    }
 
-    .avatar {
-      border-radius: 50%;
-      -moz-border-radius: 50%;
-      -webkit-border-radius: 50%;
-    }
-  }
-
-  section.date-and-category {
-    font-size: 1.1rem;
-    text-align: center;
-    word-wrap: break-word;
-
-    time {
-      font-style: italic;
-      font-size: 1rem;
-    }
-  }
-
-  section.tags {
-    text-align: center;
-    font-style: italic;
-    padding: 1rem 0;
-    word-wrap: break-word;
-  }
-
-  article {
-    margin: 2rem 0;
-
-    header {
-      margin-bottom: 3rem;
-
-      h1 {
-        font-size: 2rem;
-        margin: 1rem 0 1rem 0;
-        text-align: center;
-        word-wrap: break-word;
-
-        a {
+        &:visited, &:active, &:hover {
           color: $black;
-
-          &:visited, &:active, &:hover {
-            color: $black;
-          }
         }
-      }
-
-      section {
-        font-size: 1rem;
-        text-align: right;
       }
     }
 
     section {
-      &.post-content {
-        font-size: 1.3rem;
-        word-wrap: break-word;
+      font-size: 0.8rem;
+      font-style: italic;
+      text-align: center;
+    }
+  }
 
-        img {
-          display: block;
-          height: auto;
-          left: 50%;
-          max-width: 125%;
-          padding: 2rem 0;
-          position: relative;
-          transform: translateX(-50%);
-          -ms-transform: translateX(-50%);
-          -webkit-transform: translateX(-50%);
-        }
+  section.post-content {
+    img {
+      display: block;
+      max-width: 125%;
+      height: auto;
+      padding: 0.6em 0;
+      position: relative;
+      left: 50%;
+      -webkit-transform: translateX(-50%); /* for Safari and iOS */
+      -ms-transform: translateX(-50%); /* for IE9 */
+      transform: translateX(-50%);
+    }
+
+    //p {
+    //  text-align: justify;
+    //}
+  }
+
+  section.post-meta {
+    margin: 2rem 0;
+    text-align: center;
+
+    section.category, section.tags {
+      margin: 1rem 0;
+
+      span {
+        margin-right: 0.2rem;
       }
     }
 
-    div#disqus_thread {
-      margin-top: 6rem;
+    section.share {
+      font-size: 2rem;
+      margin-top: 3rem;
+
+      a {
+        margin: 0 1rem;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &.icon-twitter {
+          color: #1DA1F2;
+        }
+
+        &.icon-facebook2 {
+          color: #3B5998;
+        }
+
+        &.icon-google-plus2 {
+          color: #DB4437;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  article {
+    section.post-content {
+      img {
+        padding: 0;
+        width: calc(100% + 32px); /* expand with to image + margins */
+        min-width: 0;
+        max-width: 112%; /* fallback when calc doesn't work */
+      }
     }
   }
 }

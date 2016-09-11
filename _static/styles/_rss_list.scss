@@ -1,4 +1,10 @@
 .rss-list {
+  position: relative;
+  width: 80%;
+  max-width: 710px;
+  margin: 0 auto;
+  word-wrap: break-word;
+
   ul {
     margin: 2rem 0 3rem 0;
     padding: 0;
