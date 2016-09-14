@@ -1,23 +1,42 @@
 @import "settings";
 
 section.pagination {
-  padding: 2rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 2rem;
 
   a {
-    display: block;
-    padding: 1rem 1.5rem;
-    background: $blue;
-    color: $white;
-    border-radius: 0.2rem;
+    align-items: center;
+    background-color: $background-gray;
+    display: flex;
+    flex: 1;
+    font-size: 2rem;
+    height: 6rem;
+    justify-content: center;
 
-    &:visited, &:active, &:hover {
-      color: $white;
+    &:active,
+    &:visited,
+    &:hover {
+      color: $black;
+      text-decoration: none;
     }
 
-    &:nth-child(2) {
-      margin-left: auto;
+    &:hover:not(.disabled) {
+      background-color: darken($background-gray, 10%);
+    }
+
+    &.disabled {
+      color: darken($background-gray, 10%);
+    }
+  }
+}
+
+@media screen and (min-width: 630px) {
+  section.pagination {
+    flex-direction: row;
+
+    a {
+      flex-basis: 100%;
     }
   }
 }

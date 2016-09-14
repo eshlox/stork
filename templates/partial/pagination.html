@@ -1,8 +1,8 @@
 <section class="pagination">
-  {% if articles_page.has_previous() %}
-    <a href="{{ articles_previous_page.url }}" title="&larr; Newer Posts">&larr; Newer Posts</a>
-  {% endif %}
-  {% if articles_page.has_next() %}
-    <a href="{{ articles_next_page.url }}" title="Older Posts 	&rArr;">Older Posts 	&rArr;</a>
-  {% endif %}
+  <a{% if articles_page.has_previous() %} href="{{ articles_previous_page.url }}"{% else %} class="disabled"{% endif %} title="&larr; Newer Posts">
+    &laquo; Newer Posts
+  </a>
+  <a{% if articles_page.has_next() %} href="{{ articles_next_page.url }}"{% else %} class="disabled"{% endif %} title="Older Posts &rArr;">
+    Older Posts &raquo;
+  </a>
 </section>
