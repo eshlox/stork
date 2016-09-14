@@ -1,0 +1,43 @@
+@mixin centered() {
+  margin: 0 auto;
+  max-width: 710px;
+  position: relative;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+@mixin full_width_image() {
+  display: block;
+  height: auto;
+  left: 50%;
+  max-width: 100vw;
+  overflow: hidden;
+  position: relative;
+  transform: translateX(-50%);
+}
+
+@mixin social_icons($margin) {
+  a {
+    margin: $margin;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &.icon-twitter {
+      color: #1DA1F2;
+    }
+
+    &.icon-facebook2 {
+      color: #3B5998;
+    }
+
+    &.icon-google-plus2 {
+      color: #DB4437;
+    }
+
+    &.icon-rss2 {
+      color: $orange;
+    }
+  }
+}
