@@ -5,7 +5,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <main class="{{ page.title|lower }}">
+  <main class="page {{ page.title|lower }}">
     {{ page.content }}
   </main>
 {% endblock %}
