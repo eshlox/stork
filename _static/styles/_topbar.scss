@@ -1,14 +1,21 @@
 @import "settings";
 
-header.topbar {
-  background-color: $white;
-  box-shadow: 0 0 0.1rem rgba(0, 0, 0, .15);
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
+div#panel {
+  header {
+    align-items: center;
+    background-color: $white;
+    box-shadow: 0 0 0.1rem rgba(0, 0, 0, .15);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
 
-  .author {
-    color: $black;
-    margin: 1rem;
+    .author {
+      color: $black;
+      margin: 0 1rem;
+    }
+
+    .follow {
+      @include social_icons(0 0.5rem);
+    }
   }
 }

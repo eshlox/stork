@@ -105,12 +105,16 @@ $hamburger-types: (
 //   }
 // }
 
-button#button-menu {
-  background-color: transparent;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
-  overflow: hidden;
-  outline:none;
-  margin: 1rem;
+div#panel {
+  header {
+    button {
+      background-color: transparent;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      margin: 1rem;
+      overflow: hidden;
+      outline: none;
+    }
+  }
 }

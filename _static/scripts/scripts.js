@@ -5,16 +5,16 @@ var slideout = new Slideout({
   'tolerance': 70
 });
 
+var menuButton = document.querySelector('div#panel header button');
+
 slideout.on('beforeclose', function() {
-  var overlay = document.getElementById('button-menu');
-  overlay.className = overlay.className.replace(/\b is-active\b/, '');
+  menuButton.className = menuButton.className.replace(/\b is-active\b/, '');
 });
 
 slideout.on('beforeopen', function() {
-  var overlay = document.getElementById('button-menu');
-  overlay.className += ' is-active';
+  menuButton.className += ' is-active';
 });
 
-document.querySelector('.toggle-button').addEventListener('click', function() {
+menuButton.addEventListener('click', function() {
   slideout.toggle();
 });

@@ -8,9 +8,6 @@
   position: fixed;
   right: 0;
   top: 0;
-  //width: 256px;
-  //width: auto;
-  //  width: 10rem;
   z-index: 0;
   -webkit-overflow-scrolling: touch;
 }
@@ -53,6 +50,10 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+
+    hr {
+      border-color: $menu-hr;
+    }
 
     li {
       padding: 0.5rem 2rem;

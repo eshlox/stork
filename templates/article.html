@@ -11,20 +11,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <main class="content">
+  <main class="article">
     <article>
-      <header>
-        <section>
-          <time class="post-date" datetime="{{ article.date }}">{{ article.locale_date }}</time>
-        </section>
-        <h1>
-          <a href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a>
-        </h1>
-      </header>
+      <p class="author">Przemysław `eshlox` Kołodziejczyk</p>
+      <p class="avatar"><img src="{{ AVATAR }}"></p>
 
-      {% if article.featured_imagee %}
-        <section class="featured-image">
-          <img src="{{ article.featured_image }}">
+      <p class="time"><time class="post-date" datetime="{{ article.date }}">{{ article.locale_date }}</time></p>
+
+      <h1>
+        <a href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a>
+      </h1>
+
+      {% if article.image %}
+        <section class="cover-image">
+          <img src="{{ article.image }}">
         </section>
       {% endif %}
 

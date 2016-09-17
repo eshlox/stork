@@ -10,10 +10,11 @@
     <meta name="robots" content="robots.txt" />
 
     <title>{{ SITENAME }}</title>
+
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygment.css">
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/styles.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/normalize.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygment.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/styles.css">
   </head>
   <body>
     <nav id="menu">
@@ -22,32 +23,41 @@
         eshlox
       </p>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="{{ SITEURL }}{{ CATEGORIES_URL }}">Categories</a></li>
-        <li><a href="{{ SITEURL }}{{ TAGS_URL }}">Tags</a></li>
+        <li><a href="/" title="Home">Home</a></li>
+        <hr>
+        <li><a href="{{ SITEURL }}{{ CATEGORIES_URL }}" title="Categories">Categories</a></li>
+        <li><a href="{{ SITEURL }}{{ TAGS_URL }}" title="Tags">Tags</a></li>
+        <li><a href="{{ SITEURL }}rss/index.xml" title="RSS">RSS</a></li>
+        <hr>
         {% for page_name, page_url in STATIC_PAGES.iteritems() %}
-          <li><a href="{{ SITEURL }}{{ page_url }}">{{ page_name }}</a></li>
+          <li><a href="{{ SITEURL }}{{ page_url }}" title="{{ page_name }}">{{ page_name }}</a></li>
         {% endfor %}
       </ul>
     </nav>
 
-    <main id="panel"{% if article %} class="article"{% endif %}>
-      <header class="topbar header header--fixed hide-from-print" id="header" role="banner">
-
-          <button class="hamburger--spin toggle-button" type="button" id="button-menu" aria-label="Menu" aria-controls="navigation">
+    <div id="panel">
+      <header>
+          <button class="hamburger--spin" type="button" aria-label="Menu" aria-controls="navigation">
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
             </span>
           </button>
-          <span class="author">Przemysław Kołodziejczyk</span>
-
+          {% if article %}
+            <div class="follow">
+              <a class="icon-rss2 normal-link" href="{{ SITEURL }}{{ category.url }}rss/index.xml"></a>
+              <a class="icon-twitter normal-link" href="{{ TWIITTER_URL }}"></a>
+              <a class="icon-facebook2 normal-link" href="{{ FACEBOOK_URL }}"></a>
+              <a class="icon-google-plus2 normal-link" href="{{ GOOGLE_PLUS_URL }}"></a>
+            </div>
+          {% else %}
+            <span class="author">Przemysław Kołodziejczyk</span>
+          {% endif %}
       </header>
 
       {% block content %}{% endblock %}
 
       {% include "partial/footer.html" %}
-    </main>
-
+    </div>
 
     <script src="{{ SITEURL }}/theme/js/scripts.js"></script>
   </body>

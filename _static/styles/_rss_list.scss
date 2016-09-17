@@ -1,25 +1,18 @@
 .rss-list {
-  position: relative;
-  width: 80%;
-  max-width: 710px;
-  margin: 0 auto;
-  word-wrap: break-word;
+  @include centered();
 
   ul {
     margin: 2rem 0 3rem 0;
     padding: 0;
 
     li {
+      @include social_icons(0.5rem);
+
       align-items: center;
       display: flex;
       list-style: none;
       margin: 0.5rem 0;
       padding: 0.2rem 0 0.2rem 1rem;
-
-      a.icon-rss2 {
-        color: $orange;
-        margin-right: 0.5rem;
-      }
 
       span.count {
         margin-left: 0.5rem;
