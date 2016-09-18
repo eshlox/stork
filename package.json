@@ -30,7 +30,6 @@
   "dependencies": {
     "hamburgers": "^0.5.0",
     "headroom.js": "^0.9.3",
-    "minigrid": "^3.0.6",
     "slideout": "^0.1.12"
   }
 }
