@@ -1,0 +1,13 @@
+{% if article.related_posts %}
+  <div class="related-posts">
+    <div class="header">
+      <h2>&#8675;<span>Related posts</span>&#8675;</h2>
+    </div>
+    <div class="posts-list">
+      {% for article in article.related_posts %}
+        <time class="post-date" datetime="{{ article.date }}">{{ article.locale_date }}</time>
+        <h1><a href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a></h1>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,19 @@
+.related-posts {
+  border-top: 1px solid darken($background-gray, 10%);
+
+  .header {
+    align-items: center;
+    background-color: $background-gray;
+    display: flex;
+    flex-direction: column;
+    height: 6rem;
+    margin-bottom: 2rem;
+    text-align: center;
+
+    h2 {
+      span {
+        margin: 0 2rem;
+      }
+    }
+  }
+}

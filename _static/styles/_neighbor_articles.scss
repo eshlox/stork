@@ -1,0 +1,14 @@
+.neighbor-articles {
+  a {
+    flex-direction: column;
+    justify-content: flex-start !important; // override div#panel.slideout-panel
+
+    p {
+      font-style: italic;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  }
+}

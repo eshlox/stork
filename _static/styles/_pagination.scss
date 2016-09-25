@@ -11,8 +11,8 @@ section.pagination {
     color: $black;
     display: flex;
     flex: 1;
-    height: 6rem;
     justify-content: center;
+    padding: 0 2rem;
 
     &:active,
     &:visited,
@@ -31,7 +31,7 @@ section.pagination {
   }
 }
 
-@media screen and (min-width: 630px) {
+@media screen and (min-width: 860px) {
   section.pagination {
     flex-direction: row;
 
