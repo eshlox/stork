@@ -6,8 +6,8 @@
   word-wrap: break-word;
 }
 
-@mixin full_width_image() {
-  display: block;
+@mixin full-width($display) {
+  display: $display;
   height: auto;
   left: 50%;
   max-width: 100vw;

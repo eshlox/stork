@@ -40,15 +40,23 @@ main.article {
 
     section.cover-image {
       img {
+        @include full-width(block);
+
         margin: 3rem 0;
-        @include full_width_image();
       }
     }
 
     section.post-content {
       img {
+        @include full-width(block);
+
         margin: 3rem 0;
-        @include full_width_image();
+      }
+
+      .highlight {
+        @include full-width(inline-block);
+
+        min-width: 100%;
       }
     }
 
