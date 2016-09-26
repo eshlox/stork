@@ -2,6 +2,7 @@
   a {
     flex-direction: column;
     justify-content: flex-start !important; // override div#panel.slideout-panel
+    padding: 0 1rem;
 
     p {
       font-style: italic;
