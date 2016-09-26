@@ -10,6 +10,18 @@ footer {
 
   .inline {
 
+    a {
+      color: $white;
+      text-decoration: underline;
+
+      &:active,
+      &:visited,
+      &:hover {
+        color: $white;
+        text-decoration: none;
+      }
+    }
+
     &.copyright {
       font-size: 0.9rem;
     }
