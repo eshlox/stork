@@ -1,14 +1,15 @@
-{% set T_TITLE = article.title|striptags %}
-{% set T_DESCRIPTION %}
+{% set STORK_DESCRIPTION %}
   {% if article.description %}
     {{ article.description|striptags }}
   {% else %}
     {{ article.content|striptags|truncate(160, false, '...') }}
   {% endif %}
 {% endset %}
-{% set T_CANONICAL_URL %}{{ SITEURL }}{{ article.url }}{% endset %}
+{% set STORK_CANONICAL_URL %}{{ SITEURL }}{{ article.url }}{% endset %}
 
 {% extends "base.html" %}
+
+{% set STORK_TITLE = article.title|striptags %}
 
 {% block content %}
   <main class="article">

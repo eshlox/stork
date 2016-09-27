@@ -1,5 +1,6 @@
-{% set T_TITLE %}Posts for tag {{ tag }}, page {{ articles_page.number }}{% endset %}
-{% set T_DESCRIPTION %}Posts for tag {{ tag }}, page {{ articles_page.number }}{% endset %}
-{% set T_CANONICAL_URL %}{{ SITEURL }}/tag/{{ tag }}{% endset %}
+{% set STORK_DESCRIPTION %}Posts for tag {{ tag }}, page {{ articles_page.number }}{% endset %}
+{% set STORK_CANONICAL_URL %}{{ SITEURL }}/tag/{{ tag }}/{% endset %}
 
 {% extends "index.html" %}
+
+{% set STORK_TITLE %}Posts for tag {{ tag }}, page {{ articles_page.number }}{% endset %}

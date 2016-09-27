@@ -5,9 +5,9 @@
       "@type": "Website",
       "name": "{{ SITENAME }}",
       "publisher": "{{ AUTHOR }}",
-      "url": "{{ T_CANONICAL_URL }}",
+      "url": "{{ STORK_CANONICAL_URL }}",
       "image": "{{ SITELOGO }}",
-      "description": "{{ T_DESCRIPTION|trim }}"
+      "description": "{{ STORK_DESCRIPTION|trim }}"
     }
   </script>
 {% else %}
@@ -19,20 +19,20 @@
           "@type": "Person",
           "name": "{{ AUTHOR }}",
           "image": "https://www.gravatar.com/avatar/{{ GRAVATAR }}?d=404&s=250",
-          "url": "{{ SITEURL}}{{ ABOUT_URL }}",
+          "url": "{{ SITEURL }}{{ ABOUT_URL }}",
           "sameAs": [
               "{{ SITEURL }}",
               "{{ FACEBOOK_URL }}",
               "{{ TWITTER_URL }}"
           ]
       },
-      "name": "{{ T_TITLE }}",
-      "headline": "{{ T_TITLE }}",
+      "name": "{{ STORK_TITLE }}",
+      "headline": "{{ STORK_TITLE }}",
       "url": "{{ SITEURL }}{{ article.url }}",
       "datePublished": "{{ article.date }}",
       "dateModified": "{{ article.modified }}",
       "keywords": "{{ article.category.name }}, {% for tag in article.tags %}{{ tag.name }}{% if not loop.last %}, {% endif %}{% endfor %}",
-      "description": "{{ T_DESCRIPTION|trim }}"
+      "description": "{{ STORK_DESCRIPTION|trim }}"
       {% if  article.metadata.get('cover') %}
         "image": "{{ article.metadata.get('cover') }}"
       {% endif %}

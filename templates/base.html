@@ -9,7 +9,19 @@
 
     <meta name="robots" content="robots.txt" />
 
-    <title>{{ SITENAME }}</title>
+    <title>{{ SITENAME }} - {{ STORK_TITLE }}</title>
+    <meta name="description" content="{{ STORK_DESCRIPTION }}">
+    <link href="{{ SITEURL }}{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} - RSS">
+    <link rel="canonical" href="{{ STORK_CANONICAL_URL }}">
+    <meta name="referrer" content="origin">
+    <meta name="author" content="{{ AUTHOR }}">
+
+    <link rel="shortcut icon" href="{{ FAVICON }}" type="image/x-icon">
+    <link rel="icon" href="{{ FAVICON }}" type="image/x-icon">
+
+    {% include "partial/meta_twitter.html" %}
+    {% include "partial/meta_ogp.html" %}
+    {% include "partial/meta_json_ld.html" %}
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/normalize.css">

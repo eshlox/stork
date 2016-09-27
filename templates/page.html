@@ -1,8 +1,9 @@
-{% set T_TITLE = page.title %}
-{% set T_DESCRIPTION = page.description %}
-{% set T_CANONICAL_URL %}{{ SITEURL }}{{ page.url }}{% endset %}
+{% set STORK_CANONICAL_URL %}{{ SITEURL }}{{ page.url }}{% endset %}
 
 {% extends "base.html" %}
+
+{% set STORK_TITLE = page.title %}
+{% set STORK_DESCRIPTION = page.description %}
 
 {% block content %}
   <main class="page {{ page.title|lower }}">

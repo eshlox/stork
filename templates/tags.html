@@ -1,8 +1,9 @@
-{% set T_TITLE = "List of tags" %}
-{% set T_DESCRIPTION %}List of tags{% endset %}
-{% set T_CANONICAL_URL %}{{ SITEURL }}/tags/{% endset %}
+{% set STORK_CANONICAL_URL %}{{ SITEURL }}{{ TAGS_URL }}{% endset %}
 
 {% extends "base.html" %}
+
+{% set STORK_TITLE = "List of tags" %}
+{% set STORK_DESCRIPTION = "List of tags" %}
 
 {% block content %}
   <main class="rss-list">
