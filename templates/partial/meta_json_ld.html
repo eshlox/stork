@@ -1,20 +1,8 @@
-{% if not article %}
+{% if article %}
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Website",
-      "name": "{{ SITENAME }}",
-      "publisher": "{{ AUTHOR }}",
-      "url": "{{ STORK_CANONICAL_URL }}",
-      "image": "{{ SITELOGO }}",
-      "description": "{{ STORK_DESCRIPTION|trim }}"
-    }
-  </script>
-{% else %}
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
+      "@type": "BlogPosting",
       "author": {
           "@type": "Person",
           "name": "{{ AUTHOR }}",
@@ -23,19 +11,36 @@
           "sameAs": [
               "{{ SITEURL }}",
               "{{ FACEBOOK_URL }}",
-              "{{ TWITTER_URL }}"
+              "{{ TWITTER_URL }}",
+              "{{ GOOGLE_PLUS_URL }}"
           ]
       },
       "name": "{{ STORK_TITLE }}",
       "headline": "{{ STORK_TITLE }}",
       "url": "{{ SITEURL }}{{ article.url }}",
       "datePublished": "{{ article.date }}",
-      "dateModified": "{{ article.modified }}",
-      "keywords": "{{ article.category.name }}, {% for tag in article.tags %}{{ tag.name }}{% if not loop.last %}, {% endif %}{% endfor %}",
-      "description": "{{ STORK_DESCRIPTION|trim }}"
-      {% if  article.metadata.get('cover') %}
-        "image": "{{ article.metadata.get('cover') }}"
+      {% if article.modified %}
+        "dateModified": "{{ article.modified }}",
       {% endif %}
+      "keywords": "{{ article.category.name }}, {% for tag in article.tags %}{{ tag.name }}{% if not loop.last %}, {% endif %}{% endfor %}",
+      "description": "{{ STORK_DESCRIPTION|trim }}",
+      {% if article %}
+        "image": "{{ article.metadata.get('cover', SITELOGO) }}"
+      {% else %}
+        "image": "{{ SITELOGO }}"
+      {% endif %}
+    }
+  </script>
+{% else %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "{{ SITENAME }}",
+      "publisher": "{{ AUTHOR }}",
+      "url": "{{ STORK_CANONICAL_URL }}",
+      "image": "{{ SITELOGO }}",
+      "description": "{{ STORK_DESCRIPTION|trim }}"
     }
   </script>
 {% endif %}
