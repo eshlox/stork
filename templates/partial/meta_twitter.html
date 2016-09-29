@@ -2,9 +2,14 @@
 <meta name="twitter:title" content="{{ STORK_TITLE }}" />
 <meta name="twitter:description" content="{{ STORK_DESCRIPTION|trim }}" />
 <meta name="twitter:url" content="{{ STORK_CANONICAL_URL }}" />
-<meta name="twitter:image" content="{{ SITELOGO }}" />
 <meta name="twitter:site" content="{{ TWITTER }}" />
 <meta name="twitter:creator" content="{{ TWITTER }}" />
+
+{% if article %}
+  <meta name="twitter:image" content="{{ article.metadata.get('cover', SITELOGO) }}" />
+{% else %}
+  <meta name="twitter:image" content="{{ SITELOGO }}" />
+{% endif %}
 
 {% if article %}
   <meta name="twitter:label1" content="Written by" />
