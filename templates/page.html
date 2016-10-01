@@ -6,7 +6,7 @@
 {% set STORK_DESCRIPTION = page.description %}
 
 {% block content %}
-  <main class="page {{ page.title|lower }}">
+  <main class="page {{ page.slug|lower }}">
     {{ page.content }}
   </main>
 {% endblock %}
