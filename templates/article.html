@@ -23,6 +23,8 @@
         <a href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a>
       </h1>
 
+      <p title="~{{ article.stats['wc'] }} words" class="read-time">~{{ article.stats['read_mins'] }} min read</p>
+
       {% if article.image %}
         <section class="cover-image">
           <img src="{{ article.image }}">
