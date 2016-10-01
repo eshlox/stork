@@ -53,10 +53,16 @@
           </button>
           {% if article %}
             <div class="follow">
-              <a class="icon-rss2 normal-link" href="{{ SITEURL }}/rss/index.xml"></a>
-              <a class="icon-twitter normal-link" href="{{ TWITTER_URL }}"></a>
-              <a class="icon-facebook2 normal-link" href="{{ FACEBOOK_URL }}"></a>
-              <a class="icon-google-plus2 normal-link" href="{{ GOOGLE_PLUS_URL }}"></a>
+              <a class="social-icon rss normal-link" href="{{ SITEURL }}/rss/index.xml" title="RSS"></a>
+              {% if TWITTER_URL %}
+                <a class="social-icon twitter normal-link" href="{{ TWITTER_URL }}" title="Twitter Profile"></a>
+              {% endif %}
+              {% if FACEBOOK_URL %}
+                <a class="social-icon facebook normal-link" href="{{ FACEBOOK_URL }}" title="Facebook Profile"></a>
+              {% endif %}
+              {% if GOOGLE_PLUS_URL %}
+                <a class="social-icon google-plus normal-link" href="{{ GOOGLE_PLUS_URL }}" titke="Google+ Profile"></a>
+              {% endif %}
             </div>
           {% else %}
             <span class="author">{{ AUTHOR }}</span>

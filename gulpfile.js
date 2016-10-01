@@ -32,13 +32,6 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('static/js'));
 });
 
-gulp.task('fonts', function() {
-  return gulp.src([
-    '_static/fonts/*'
-  ])
-    .pipe(gulp.dest('static/fonts'));
-});
-
 gulp.task('images', function() {
   return gulp.src([
     '_static/images/*'
@@ -46,4 +39,4 @@ gulp.task('images', function() {
     .pipe(gulp.dest('static/images'));
 });
 
-gulp.task('default', ['sass', 'scripts', 'fonts', 'images']);
+gulp.task('default', ['sass', 'scripts', 'images']);

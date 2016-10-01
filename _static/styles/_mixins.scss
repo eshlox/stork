@@ -16,28 +16,10 @@
   transform: translateX(-50%);
 }
 
-@mixin social_icons($margin) {
-  a {
-    margin: $margin;
-
-    &:hover {
-      text-decoration: none;
-    }
-
-    &.icon-twitter {
-      color: #1DA1F2;
-    }
-
-    &.icon-facebook2 {
-      color: #3B5998;
-    }
-
-    &.icon-google-plus2 {
-      color: #DB4437;
-    }
-
-    &.icon-rss2 {
-      color: $orange;
-    }
+@mixin social-icons-size($size) {
+  .social-icon {
+    width: $size;
+    height: $size;
+    background-size: $size $size;
   }
 }

@@ -79,10 +79,13 @@ main.article {
       }
 
       section.share {
-        @include social_icons(0 1rem);
+        @include social-icons-size(2rem);
 
-        font-size: 2rem;
         margin-top: 3rem;
+
+        p {
+          padding: 1rem 0;
+        }
       }
     }
   }

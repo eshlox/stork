@@ -6,13 +6,17 @@
     padding: 0;
 
     li {
-      @include social_icons(0.5rem);
+      @include social-icons-size(1.5rem);
 
       align-items: center;
       display: flex;
       list-style: none;
-      margin: 0;
+      margin: 0.5rem 0;
       padding-left: 1rem;
+
+      a {
+        margin-right: 0.5rem;
+      }
 
       span.count {
         margin-left: 0.5rem;

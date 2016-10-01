@@ -15,7 +15,9 @@ div#panel {
     }
 
     .follow {
-      @include social_icons(0 0.5rem);
+      @include social-icons-size(2rem);
+
+      padding-right: 1rem;
     }
   }
 }
