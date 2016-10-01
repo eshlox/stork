@@ -19,14 +19,13 @@ main.article {
     }
 
     p.time {
-      display: block;
       font-size: 0.8rem;
       font-style: italic;
       text-align: center;
     }
 
     h1 {
-      margin: 2rem auto 5rem auto;
+      margin: 1rem auto 1rem auto;
       text-align: center;
 
       a {
@@ -36,6 +35,13 @@ main.article {
           color: $black;
         }
       }
+    }
+
+    p.read-time {
+      font-size: 0.8rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+      text-align: center;
     }
 
     section.cover-image {
