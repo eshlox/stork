@@ -6,12 +6,20 @@ var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
 var autoprefixer = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
+var merge = require('merge-stream');
 
 gulp.task('sass', function () {
-  var scssStream = gulp.src('_static/styles/base.scss')
+  var baseCssStream = gulp.src('_static/styles/base.scss')
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError));
+
+  var normalize = gulp.src('node_modules/normalize.css/normalize.css');
+  var pygments = gulp.src('_styles/pygments.css');
+
+  return merge(normalize, pygments, baseCssStream)
+    .pipe(concat('styles.css'))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false}))
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(cleanCSS({compatibility: 'ie8'}));
+    .pipe(gulp.dest('static/css'));
 });
 
 gulp.task('scripts', function() {
