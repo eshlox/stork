@@ -16,8 +16,10 @@
     <meta name="referrer" content="origin">
     <meta name="author" content="{{ AUTHOR }}">
 
-    <link rel="shortcut icon" href="{{ FAVICON }}" type="image/x-icon">
-    <link rel="icon" href="{{ FAVICON }}" type="image/x-icon">
+    {% if FAVICON %}
+      <link rel="shortcut icon" href="{{ FAVICON }}" type="image/x-icon">
+      <link rel="icon" href="{{ FAVICON }}" type="image/x-icon">
+    {% endif %}
 
     {% include "partial/meta_twitter.html" %}
     {% include "partial/meta_ogp.html" %}
