@@ -66,8 +66,7 @@ main.article {
     }
 
     section.post-meta {
-      margin: 2rem 0;
-      text-align: center;
+      margin: 2rem 0 $footer-top-margin 0;
 
       section.category, section.tags {
         margin: 1rem 0;
@@ -80,7 +79,9 @@ main.article {
       section.share {
         @include social-icons-size(2rem);
 
-        margin-top: 3rem;
+        margin-bottom: 1rem;
+
+        text-align: center;
 
         p {
           padding: 1rem 0;

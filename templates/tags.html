@@ -12,7 +12,7 @@
       {%- for tag, articles in tags|sort %}
         <li>
           <a class="social-icon rss" href="{{ SITEURL }}{{ tag.url }}rss/index.xml"></a>
-          <a href="{{ SITEURL }}{{ tag.url }}">#{{ tag }}</a>
+          <a href="{{ SITEURL }}{{ tag.url }}">{{ tag }}</a>
           <span class="count">({{ articles|count }})</span>
         </li>
       {% endfor %}
