@@ -13,7 +13,7 @@ gulp.task('sass', function () {
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError));
 
   var normalize = gulp.src('node_modules/normalize.css/normalize.css');
-  var pygments = gulp.src('_styles/pygments.css');
+  var pygments = gulp.src('_static/styles/pygment.css');
 
   return merge(normalize, pygments, baseCssStream)
     .pipe(concat('styles.css'))
