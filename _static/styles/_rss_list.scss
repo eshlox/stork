@@ -1,8 +1,10 @@
 .rss-list {
   @include centered();
 
+  margin-bottom: $footer-top-margin;
+
   ul {
-    margin: 2rem 0 3rem 0;
+    margin: 2rem 0 0 0;
     padding: 0;
 
     li {

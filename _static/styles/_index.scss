@@ -10,6 +10,7 @@
 
   h1 {
     margin: 1rem auto 5rem auto;
+
     padding: 0 1rem;
     text-align: center;
 
@@ -20,5 +21,9 @@
         color: $black;
       }
     }
+  }
+
+  h1:last-child {
+    margin: 1rem auto $footer-top-margin auto;
   }
 }

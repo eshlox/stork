@@ -3,7 +3,6 @@ main.article {
     @include centered();
 
     p.author {
-      margin-top: 0;
       text-align: center;
     }
 
@@ -62,7 +61,7 @@ main.article {
       .highlight {
         @include full-width(inline-block);
 
-        min-width: 100%;
+        min-width: 90%;
       }
     }
 
@@ -89,17 +88,4 @@ main.article {
       }
     }
   }
-
-  //@media only screen and (max-width: 710px) {
-  //  article {
-  //    section.post-content {
-  //      img {
-  //        padding: 0;
-  //        width: calc(100% + 32px); /* expand with to image + margins */
-  //        min-width: 0;
-  //        max-width: 112%; /* fallback when calc doesn't work */
-  //      }
-  //    }
-  //  }
-  //}
 }
