@@ -36,6 +36,7 @@ footer {
 @media screen and (max-width: 860px) {
   footer {
     flex-direction: column;
+    text-align: center;
 
     .inline {
       &:nth-child(2) {
