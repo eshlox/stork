@@ -6,9 +6,9 @@
 <meta name="twitter:creator" content="{{ TWITTER }}" />
 
 {% if article %}
-  <meta name="twitter:image" content="{{ article.metadata.get('cover', SITELOGO) }}" />
+  <meta name="twitter:image" content="{{ SITEURL }}{{ article.metadata.get('cover', SITELOGO) }}" />
 {% else %}
-  <meta name="twitter:image" content="{{ SITELOGO }}" />
+  <meta name="twitter:image" content="{{ SITEURL }}{{ SITELOGO }}" />
 {% endif %}
 
 {% if article %}

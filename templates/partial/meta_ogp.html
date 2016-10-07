@@ -5,9 +5,9 @@
 <meta property="og:url" content="{{ STORK_CANONICAL_URL }}" />
 
 {% if article %}
-  <meta property="og:image" content="{{ article.metadata.get('cover', SITELOGO) }}" />
+  <meta property="og:image" content="{{ SITEURL }}{{ article.metadata.get('cover', SITELOGO) }}" />
 {% else %}
-  <meta property="og:image" content="{{ SITELOGO }}" />
+  <meta property="og:image" content="{{ SITEURL }}{{ SITELOGO }}" />
 {% endif %}
 
 {% if article %}

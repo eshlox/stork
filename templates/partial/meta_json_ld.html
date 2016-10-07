@@ -25,9 +25,9 @@
       "keywords": "{{ article.category.name }}, {% for tag in article.tags %}{{ tag.name }}{% if not loop.last %}, {% endif %}{% endfor %}",
       "description": "{{ STORK_DESCRIPTION|trim }}",
       {% if article %}
-        "image": "{{ article.metadata.get('cover', SITELOGO) }}"
+        "image": "{{ SITEURL }}{{ article.metadata.get('cover', SITELOGO) }}"
       {% else %}
-        "image": "{{ SITELOGO }}"
+        "image": "{{ SITEURL }}{{ SITELOGO }}"
       {% endif %}
     }
   </script>
@@ -39,7 +39,7 @@
       "name": "{{ SITENAME }}",
       "publisher": "{{ AUTHOR }}",
       "url": "{{ STORK_CANONICAL_URL }}",
-      "image": "{{ SITELOGO }}",
+      "image": "{{ SITEURL }}{{ SITELOGO }}",
       "description": "{{ STORK_DESCRIPTION|trim }}"
     }
   </script>
