@@ -55,10 +55,14 @@
         </section>
       </section>
 
-      {% include "partial/disqus.html" %}
+      {% if article.status != 'draft' %}
+        {% include "partial/disqus.html" %}
+      {% endif %}
     </article>
 
-    {% include "partial/neighbor_articles.html" %}
-    {% include "partial/related_posts.html" %}
+    {% if article.status != 'draft' %}
+      {% include "partial/neighbor_articles.html" %}
+      {% include "partial/related_posts.html" %}
+    {% endif %}
   </main>
 {% endblock %}
