@@ -29,5 +29,8 @@
     "hamburgers": "0.5.0",
     "normalize.css": "^4.2.0",
     "slideout": "0.1.12"
+  },
+  "scripts": {
+    "build": "gulp"
   }
 }
