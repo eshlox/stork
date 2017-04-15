@@ -11,7 +11,7 @@
 
     <title>{{ SITENAME }} - {{ STORK_TITLE }}</title>
     <meta name="description" content="{{ STORK_DESCRIPTION }}">
-    <link href="{{ SITEURL }}{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} - RSS">
+    <link href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} - RSS">
     <link rel="canonical" href="{{ STORK_CANONICAL_URL }}">
     <meta name="referrer" content="origin">
     <meta name="author" content="{{ AUTHOR }}">
@@ -30,16 +30,16 @@
   </head>
   <body>
     <nav id="menu">
-      <img src="{{ SITEURL }}{{ SITELOGO }}" alt="Logo">
+      <img src="{{ SITEURL }}/{{ SITELOGO }}" alt="Logo">
       <ul>
         <li><a href="/" title="Home">Home</a></li>
         <hr>
-        <li><a href="{{ SITEURL }}{{ CATEGORIES_URL }}" title="Categories">Categories</a></li>
-        <li><a href="{{ SITEURL }}{{ TAGS_URL }}" title="Tags">Tags</a></li>
+        <li><a href="{{ SITEURL }}/{{ CATEGORIES_URL }}" title="Categories">Categories</a></li>
+        <li><a href="{{ SITEURL }}/{{ TAGS_URL }}" title="Tags">Tags</a></li>
         <li><a href="{{ SITEURL }}/rss/index.xml" title="RSS">RSS</a></li>
         <hr>
         {% for page_name, page_url in STATIC_PAGES.iteritems() %}
-          <li><a href="{{ SITEURL }}{{ page_url }}" title="{{ page_name }}">{{ page_name }}</a></li>
+          <li><a href="{{ SITEURL }}/{{ page_url }}" title="{{ page_name }}">{{ page_name }}</a></li>
         {% endfor %}
       </ul>
     </nav>

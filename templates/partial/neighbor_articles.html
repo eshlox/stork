@@ -1,9 +1,9 @@
 <section class="pagination neighbor-articles">
-  <a{% if article.next_article %} href="{{ article.next_article.url }}"{% else %} class="disabled"{% endif %} title="{{ article.next_article.url }}">
+  <a{% if article.next_article %} href="{{ SITEURL }}/{{ article.next_article.url }}"{% else %} class="disabled"{% endif %} title="{{ article.next_article.title }}">
     <p>Newest post</p>
     <h2>{{ article.next_article.title }}</h2>
   </a>
-  <a{% if article.prev_article %} href="{{ article.prev_article.url }}"{% else %} class="disabled"{% endif %} title="{{ article.prev_article.title }}">
+  <a{% if article.prev_article %} href="{{ SITEURL }}/{{ article.prev_article.url }}"{% else %} class="disabled"{% endif %} title="{{ article.prev_article.title }}">
     <p>Older post</p>
     <h2>{{ article.prev_article.title }}</h2>
   </a>

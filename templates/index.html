@@ -9,7 +9,7 @@
   <main role="main" class="posts-list">
     {% for article in articles_page.object_list %}
       <time class="post-date" datetime="{{ article.date }}">{{ article.locale_date }}</time>
-      <h1><a href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a></h1>
+      <h1><a href="{{ SITEURL }}/{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a></h1>
     {% endfor %}
   </main>
 

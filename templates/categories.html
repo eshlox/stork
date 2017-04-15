@@ -10,8 +10,8 @@
     <ul>
       {% for category, articles in categories|sort %}
         <li>
-          <a class="social-icon rss" href="{{ SITEURL }}{{ category.url }}rss/index.xml"></a>
-          <a href="{{ SITEURL }}{{ category.url }}">{{ category }}</a>
+          <a class="social-icon rss" href="{{ SITEURL }}/{{ category.url }}rss/index.xml"></a>
+          <a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
           <span class="count">({{ articles|count }})</span>
         </li>
       {% endfor %}

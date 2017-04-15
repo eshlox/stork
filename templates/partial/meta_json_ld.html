@@ -7,7 +7,7 @@
           "@type": "Person",
           "name": "{{ AUTHOR }}",
           "image": "{{ AVATAR }}",
-          "url": "{{ SITEURL }}{{ ABOUT_URL }}",
+          "url": "{{ SITEURL }}/{{ ABOUT_URL }}",
           "sameAs": [
               "{{ SITEURL }}",
               "{{ FACEBOOK_URL }}",
@@ -17,7 +17,7 @@
       },
       "name": "{{ STORK_TITLE }}",
       "headline": "{{ STORK_TITLE }}",
-      "url": "{{ SITEURL }}{{ article.url }}",
+      "url": "{{ SITEURL }}/{{ article.url }}",
       "datePublished": "{{ article.date }}",
       {% if article.modified %}
         "dateModified": "{{ article.modified }}",
@@ -25,9 +25,9 @@
       "keywords": "{{ article.category.name }}, {% for tag in article.tags %}{{ tag.name }}{% if not loop.last %}, {% endif %}{% endfor %}",
       "description": "{{ STORK_DESCRIPTION|trim }}",
       {% if article %}
-        "image": "{{ SITEURL }}{{ article.metadata.get('cover', SITELOGO) }}"
+        "image": "{{ SITEURL }}/{{ article.metadata.get('cover', SITELOGO) }}"
       {% else %}
-        "image": "{{ SITEURL }}{{ SITELOGO }}"
+        "image": "{{ SITEURL }}/{{ SITELOGO }}"
       {% endif %}
     }
   </script>
@@ -39,7 +39,7 @@
       "name": "{{ SITENAME }}",
       "publisher": "{{ AUTHOR }}",
       "url": "{{ STORK_CANONICAL_URL }}",
-      "image": "{{ SITEURL }}{{ SITELOGO }}",
+      "image": "{{ SITEURL }}/{{ SITELOGO }}",
       "description": "{{ STORK_DESCRIPTION|trim }}"
     }
   </script>
