@@ -26,8 +26,8 @@
     "merge-stream": "1.0.1"
   },
   "dependencies": {
-    "hamburgers": "0.7.0",
-    "normalize.css": "5.0.0",
+    "hamburgers": "0.8.1",
+    "normalize.css": "6.0.0",
     "slideout": "1.0.1"
   },
   "scripts": {

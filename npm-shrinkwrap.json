@@ -1,0 +1,31 @@
+{
+  "name": "Stork",
+  "version": "0.0.1",
+  "dependencies": {
+    "decouple": {
+      "version": "0.0.2",
+      "from": "decouple@0.0.2",
+      "resolved": "https://registry.npmjs.org/decouple/-/decouple-0.0.2.tgz"
+    },
+    "emitter": {
+      "version": "0.0.7",
+      "from": "git+https://github.com/Mango/emitter.git#0.0.7",
+      "resolved": "git+https://github.com/Mango/emitter.git#41ab8a3956269c7ed468bde50203e15b3274152f"
+    },
+    "hamburgers": {
+      "version": "0.8.1",
+      "from": "hamburgers@0.8.1",
+      "resolved": "https://registry.npmjs.org/hamburgers/-/hamburgers-0.8.1.tgz"
+    },
+    "normalize.css": {
+      "version": "6.0.0",
+      "from": "normalize.css@6.0.0",
+      "resolved": "https://registry.npmjs.org/normalize.css/-/normalize.css-6.0.0.tgz"
+    },
+    "slideout": {
+      "version": "1.0.1",
+      "from": "slideout@1.0.1",
+      "resolved": "https://registry.npmjs.org/slideout/-/slideout-1.0.1.tgz"
+    }
+  }
+}
